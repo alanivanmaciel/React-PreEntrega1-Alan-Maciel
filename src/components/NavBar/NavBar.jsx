@@ -1,15 +1,16 @@
 import CartWidget from "../CartWidget/CartWidget";
+import "./NavBar.css";
 
 function NavBar(props) {
   return (
-    <nav>
-      <h1>E-Commerce</h1>
-      <div>
+    <nav className="NavBar">
+      <h1>RUDA Colecciones</h1>
+      <div className="Menu">
         <button>Productos</button>
         <button>Temporadas</button>
-        <button>Videos</button>
+        <button>Contacto</button>
+        <CartWidget />
       </div>
-      <CartWidget />
     </nav>
   );
 }
