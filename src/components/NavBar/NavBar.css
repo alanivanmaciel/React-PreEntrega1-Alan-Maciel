@@ -1,5 +1,5 @@
 .NavBar {
-  background-color: #FF6636;
+  background-color: #ff6636;
 }
 
 .NavBar h1 {
@@ -16,9 +16,9 @@
   padding-right: 10px;
 }
 
-.Menu Button {
+.LinkMenu {
   border: none;
-  padding-right: 20px;
   color: white;
   font-size: 15px;
+  text-decoration: none;
 }
