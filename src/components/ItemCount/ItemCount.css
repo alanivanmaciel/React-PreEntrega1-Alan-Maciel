@@ -1,0 +1,43 @@
+.ItemCount { 
+    padding: 15px;
+    width: 200px;
+}
+
+.Count { 
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+}
+
+.Count button { 
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    border: none;
+    background-color: #ff6636;
+    color: white;
+    border-radius: 5px;
+}
+
+.Count h4 {
+    margin: 10px;
+    height: 40px;
+    font-size: 30px;
+}
+
+.addCart { 
+    margin-top: 10px;
+    background-color: #ff6636;
+    color: white;
+    border: none;
+    height: 40px;
+    width: 200px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.addCart:hover, .Count button:hover {
+    opacity: 0.8;
+}

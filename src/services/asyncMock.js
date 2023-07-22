@@ -84,7 +84,7 @@ export const getDataByID = (idURL) => {
 export const getCategoryId = (categoryId) => {
   return new Promise((resolve) => {
     const categoryRequestd = products.filter((prod) => {
-      return prod.category.toLowerCase() === categoryId.toLowerCase()
+      return prod.category.toLowerCase() === categoryId.toLowerCase();
     });
     setTimeout(() => {
       resolve(categoryRequestd);

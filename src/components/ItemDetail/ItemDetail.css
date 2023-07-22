@@ -1,0 +1,26 @@
+.DetailContainer {
+    width: 60%;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+
+}
+
+.DetailContainer header {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    font-size: 30px;
+}
+
+.DetailContainer picture {
+    grid-column: span 2;
+}
+
+.DetailContainer section {
+    grid-column: 3 / 4;
+    display: grid;
+    justify-items: center;
+    row-gap: 0px;
+}

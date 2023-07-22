@@ -1,6 +1,6 @@
-.ItemList { 
-     gap: 90px;
-    display: flex; 
-    flex-wrap: wrap;
-    justify-content: space-around;
+.ItemList {
+  gap: 90px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }

@@ -18,7 +18,6 @@ function ItemDetailContainer() {
 
   return (
     <div>
-      <h1>Detailcontainer</h1>
       <ItemDetail {...product} />
     </div>
   );
