@@ -1,12 +1,15 @@
 .NavBar {
   background-color: #ff6636;
+  height: 95px;
+  width: 100%;
+  top: 0;
 }
 
 .NavBar h1 {
   margin: 0px;
   text-align: center;
   color: white;
-  font-size: 35px;
+  font-size: 40px;
 }
 
 .Menu {
@@ -16,9 +19,16 @@
   padding-right: 10px;
 }
 
-.LinkMenu {
+.LinkMenu,
+#basic-button {
   border: none;
   color: white;
   font-size: 15px;
+  text-decoration: none;
+  padding: 0px;
+}
+
+.MenuItem a {
+  color: black;
   text-decoration: none;
 }
