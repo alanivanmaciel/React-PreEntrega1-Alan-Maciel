@@ -10,8 +10,7 @@ const Item = ({ title, id, description, price, stock, img }) => {
         </picture>
         <section className="section">
           <h2> {title} </h2>
-          <p> {description} </p>
-          <p>Precio: ${price} </p>
+          <p>{description}</p>
         </section>
         <footer>
           <button>Ver producto</button>
