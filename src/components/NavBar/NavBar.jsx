@@ -31,7 +31,7 @@ function NavBar(props) {
           </Link>
         </Button>
         <Button>
-          <Link to="/prueba" className="LinkMenu">
+          <Link to="/contacto" className="LinkMenu">
             Contactos
           </Link>
         </Button>

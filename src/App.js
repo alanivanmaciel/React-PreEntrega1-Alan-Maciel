@@ -16,7 +16,7 @@ function App() {
               path="/category/:categoryId"
               element={<ItemListContainer />}
             />
-            <Route path="/prueba" element={<h1>Seccion en mantenimiento</h1>} />
+            <Route path="/contacto" element={<h1>Seccion en mantenimiento</h1>} />
             <Route path="*" element={<h1>Page not found: 404</h1>} />
           </Routes>
         </div>
