@@ -8,18 +8,18 @@ const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState([]);
   const { categoryId } = useParams();
 
-  async function requestProducts() {
-    let respuesta = categoryId
-      ? await getCategoryId(categoryId)
-      : await getData();
-    setProducts(respuesta);
-  }
-
   let title = categoryId ? categoryId.toUpperCase() : "Todos los productos";
 
   useEffect(() => {
+    async function requestProducts() {
+      let respuesta = categoryId
+        ? await getCategoryId(categoryId)
+        : await getData();
+      setProducts(respuesta);
+    }
+
     requestProducts();
-  }, []);
+  }, [categoryId]);
 
   return (
     <div className="ItemContainer">
