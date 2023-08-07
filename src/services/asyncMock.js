@@ -77,7 +77,7 @@ export const getDataByID = (idURL) => {
     const productRequestd = products.find((prod) => prod.id == Number(idURL));
     setTimeout(() => {
       resolve(productRequestd);
-    }, 500);
+    }, 1500);
   });
 };
 
@@ -88,6 +88,6 @@ export const getCategoryId = (categoryId) => {
     });
     setTimeout(() => {
       resolve(categoryRequestd);
-    }, 500);
+    }, 1500);
   });
 };

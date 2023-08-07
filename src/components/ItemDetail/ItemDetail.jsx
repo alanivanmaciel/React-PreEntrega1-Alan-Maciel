@@ -2,6 +2,10 @@ import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 
 const ItemDetail = ({ id, title, description, price, stock, img }) => {
+  function handleAddToCart(quantity) {
+    console.log(`Agregaste ${quantity} de ${title} al carrito.`);
+  }
+
   return (
     <article className="DetailContainer">
       <header>
@@ -16,9 +20,10 @@ const ItemDetail = ({ id, title, description, price, stock, img }) => {
         <p>Stock: {stock} </p>
         <p>Precio: ${price}</p>
         <ItemCount
+          onAddToCart={handleAddToCart}
           initial={1}
           stock={stock}
-          onAdd={(quantity) => console.log("Cantidad agregada ", quantity)}
+          title={title}
         />
       </section>
       <footer></footer>
