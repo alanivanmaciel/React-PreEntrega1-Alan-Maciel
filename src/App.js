@@ -1,15 +1,13 @@
-import { createContext } from "react";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import NavBar from "./components/NavBar/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-const cartContext = createContext({ cart: [] });
+import { CartProvider } from "./context/cartContext";
 
 function App() {
   return (
     <div className="App">
-      <cartContext.Provider value={{ cart: [1, 2, 5, 10], prueba: "OK" }}>
+      <CartProvider>
         <BrowserRouter>
           <NavBar />
           <div className="Container">
@@ -28,10 +26,9 @@ function App() {
             </Routes>
           </div>
         </BrowserRouter>
-      </cartContext.Provider>
+      </CartProvider>
     </div>
   );
 }
 
 export default App;
-export { cartContext };

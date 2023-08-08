@@ -1,8 +1,13 @@
+import { cartContext } from "../../context/cartContext";
 import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
+import { useContext } from "react";
 
 const ItemDetail = ({ id, title, description, price, stock, img }) => {
+  const { addToCart } = useContext(cartContext);
+
   function handleAddToCart(quantity) {
+    addToCart(title, quantity);
     console.log(`Agregaste ${quantity} de ${title} al carrito.`);
   }
 

@@ -1,14 +1,13 @@
 import { useContext } from "react";
 import cart from "./assets/carrito.svg";
-import { cartContext } from "../../App";
+import { cartContext } from "../../context/cartContext";
 
 function CartWidget() {
   const context = useContext(cartContext);
-  console.log(context);
   return (
     <div className="CartWidget">
       <img src={cart} alt="cart-widget" />
-      <span> {context.cart.length} </span>
+      <span> {context.getTotalItemsInCart()} </span>
     </div>
   );
 }
