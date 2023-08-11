@@ -3,6 +3,7 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import NavBar from "./components/NavBar/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "./context/cartContext";
+import CartContainer from "./components/CartContainer/CartContainer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
                 path="/category/:categoryId"
                 element={<ItemListContainer />}
               />
+              <Route path="/cart" element={<CartContainer />}/>
               <Route
                 path="/contacto"
                 element={<h1>Seccion en mantenimiento</h1>}

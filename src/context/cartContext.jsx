@@ -6,15 +6,15 @@ function CartProvider(props) {
   const [cart, setCart] = useState([]);
   const prueba = "otra prueba";
 
-  function addToCart(product, count) {
+  function addToCart( product, count) {
     const newCart = cart.map((item) => item);
-    const newItemInCart = { count, ...product };
+    const newItemInCart = { count, product };
     newCart.push(newItemInCart);
     setCart(newCart);
   }
 
   function removeItem(id) {
-    return null;
+    return console.log(`${id} eliminado del carrito.`);
   }
 
   function clearCart() {

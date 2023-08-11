@@ -5,6 +5,10 @@
   overflow: hidden;
 }
 
+.Card-disabled {
+  display: none;
+}
+
 .Card img {
   width: 100%;
   height: 100%;

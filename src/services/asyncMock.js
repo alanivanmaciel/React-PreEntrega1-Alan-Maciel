@@ -5,7 +5,7 @@ const products = [
     category: "sacos",
     description: "Color: Beige",
     price: 15000,
-    stock: 15,
+    stock: 0,
     img: "/assets/sacooverbeige.jpg",
   },
   {
@@ -14,7 +14,7 @@ const products = [
     category: "sacos",
     description: "Color: Negro",
     price: 15000,
-    stock: 15,
+    stock: 10,
     img: "/assets/sacoovernegro.jpg",
   },
   {
