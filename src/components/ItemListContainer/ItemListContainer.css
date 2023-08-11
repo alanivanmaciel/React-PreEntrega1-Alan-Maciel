@@ -1,3 +1,8 @@
 .ItemContainer {
   margin: 20px;
 }
+
+.loader {
+  color: #ff6636 !important;
+  margin-top: 50%;
+}
