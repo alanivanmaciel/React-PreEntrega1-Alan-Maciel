@@ -30,7 +30,6 @@ const ItemListContainer = ({ greeting }) => {
   }
 
   if (products.length === 0) {
-    console.log(products)
     return <p>No hay productos disponibles para esta consulta.</p>;
   }
 

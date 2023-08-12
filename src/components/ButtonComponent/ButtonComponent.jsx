@@ -1,8 +1,12 @@
 function ButtonComponent(props) {
-  const { children } = props;
+  const { children, width, height } = props;
+  const styleButton = {
+    width: width,
+    height: height,
+  };
   return (
     <>
-      <button className="addCart" onClick={props.onClick}>
+      <button style={styleButton} className="addCart" onClick={props.onClick}>
         {children}
       </button>
     </>

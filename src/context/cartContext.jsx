@@ -6,20 +6,33 @@ function CartProvider(props) {
   const [cart, setCart] = useState([]);
   const prueba = "otra prueba";
 
-  function addToCart( product, count) {
-    const newCart = cart.map((item) => item);
-    const newItemInCart = { count, product };
-    newCart.push(newItemInCart);
-    setCart(newCart);
+  function addToCart(product, count) {
+    const newCart = [...cart];
+    if (isInCart(product.id)) {
+      const indexUpdate = cart.findIndex((item) => item.id === product.id);
+      newCart[indexUpdate].count += count;
+      setCart(newCart);
+    } else {
+      const newItemInCart = { ...product, count };
+      newCart.push(newItemInCart);
+      setCart(newCart);
+    }
+  }
+
+  function isInCart(id) {
+    return cart.some((item) => item.id === id);
+  }
+
+  function getItemInCart(id) {
+    return cart.find((item) => item.id === id);
   }
 
   function removeItem(id) {
-    return console.log(`${id} eliminado del carrito.`);
+    setCart(cart.filter((item) => item.id !== id));
   }
 
   function clearCart() {
-    return null;
-    // vaciar el carrito
+    setCart([])
   }
 
   function getTotalItemsInCart() {
@@ -30,14 +43,10 @@ function CartProvider(props) {
     return total;
   }
 
-  function getItem(id) {
-    //find item
-    return cart[0];
-  }
-
   return (
     <cartContext.Provider
       value={{
+        getItemInCart,
         cart,
         prueba,
         addToCart,

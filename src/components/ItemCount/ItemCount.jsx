@@ -25,7 +25,11 @@ const ItemCount = ({ stock, initial, onAddToCart }) => {
         <button onClick={increment}>+</button>
       </div>
       <div>
-        <ButtonComponent onClick={() => onAddToCart(quantity)}>
+        <ButtonComponent
+          onClick={() => onAddToCart(quantity)}
+          width="200px"
+          height="40px"
+        >
           Agregar al carrito
         </ButtonComponent>
       </div>
