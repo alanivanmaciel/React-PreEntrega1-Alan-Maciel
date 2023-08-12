@@ -9,12 +9,19 @@ function ItemDetailContainer() {
   const [product, setProduct] = useState(null);
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
+  const [errorsText, setErrorsText] = useState(null);
 
   useEffect(() => {
     async function requestProduct() {
-      const respuesta = await getDataByID(id);
-      setProduct(respuesta);
-      setIsLoading(false);
+      try {
+        const respuesta = await getDataByID(id);
+        setProduct(respuesta);
+      } catch (error) {
+        setErrorsText(error.message);
+        setIsLoading(true);
+      } finally {
+        setIsLoading(false);
+      }
     }
 
     requestProduct();
@@ -23,6 +30,8 @@ function ItemDetailContainer() {
   if (isLoading) {
     return <CircularProgress className="loader" />;
   }
+
+  if (errorsText) return <div className="styleError">{errorsText}</div>;
 
   return (
     <div>

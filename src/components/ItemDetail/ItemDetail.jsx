@@ -13,7 +13,6 @@ const ItemDetail = ({ product }) => {
   const maxItems = itemInCart
     ? product.stock - itemInCart.count
     : product.stock;
-  console.log(maxItems);
 
   function handleAddToCart(quantity) {
     addToCart(product, quantity);
