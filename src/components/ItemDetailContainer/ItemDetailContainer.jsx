@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getDataByID } from "../../services/asyncMock";
+import { getDataByID } from "../../services/firebase";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 import { CircularProgress } from "@mui/material";
@@ -18,7 +18,7 @@ function ItemDetailContainer() {
     }
 
     requestProduct();
-  }, []);
+  }, [id]);
 
   if (isLoading) {
     return <CircularProgress className="loader" />;

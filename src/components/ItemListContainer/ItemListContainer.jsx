@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getData, getCategoryId } from "../../services/asyncMock";
+import { getData, getCategoryId } from "../../services/firebase";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import "./ItemListContainer.css";
@@ -30,6 +30,7 @@ const ItemListContainer = ({ greeting }) => {
   }
 
   if (products.length === 0) {
+    console.log(products)
     return <p>No hay productos disponibles para esta consulta.</p>;
   }
 

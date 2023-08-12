@@ -5,7 +5,7 @@ import { useContext, useState } from "react";
 import ButtonComponent from "../ButtonComponent/ButtonComponent";
 import { Link } from "react-router-dom";
 
-const ItemDetail = ({ id, title, description, price, stock, img }) => {
+const ItemDetail = ({ id, title, color, price, stock, img }) => {
   const { addToCart } = useContext(cartContext);
   const [isAddedToCart, setIsAddedToCart] = useState(false);
 
@@ -24,7 +24,7 @@ const ItemDetail = ({ id, title, description, price, stock, img }) => {
         <img width={400} src={img} alt={title} />
       </picture>
       <section>
-        <h3>Descripcion: {description}</h3>
+        <h3>Descripcion: {color}</h3>
         <p>ID de Producto: {id}</p>
         <p>Stock: {stock} </p>
         <p>Precio: ${price}</p>
