@@ -31,11 +31,6 @@ function NavBar(props) {
           </Link>
         </Button>
         <Button>
-          <Link to="/contacto" className="LinkMenu">
-            Contactos
-          </Link>
-        </Button>
-        <Button>
           <Link to="Cart" className="LinkMenu">
             <CartWidget />
           </Link>

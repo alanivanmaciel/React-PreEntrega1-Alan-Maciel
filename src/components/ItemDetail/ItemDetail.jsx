@@ -5,6 +5,10 @@ import ButtonComponent from "../ButtonComponent/ButtonComponent";
 import ItemCount from "../ItemCount/ItemCount";
 import { cartContext } from "../../context/cartContext";
 
+export function formatPrice(number) {
+  return new Intl.NumberFormat().format(number);
+}
+
 const ItemDetail = ({ product }) => {
   const { addToCart, getItemInCart } = useContext(cartContext);
   const [isAddedToCart, setIsAddedToCart] = useState(false);
@@ -31,7 +35,7 @@ const ItemDetail = ({ product }) => {
         <h3>Descripcion: {product.color}</h3>
         <p>ID de Producto: {product.id}</p>
         <p>Stock: {maxItems} </p>
-        <p>Precio: ${product.price}</p>
+        <p>Precio: ${formatPrice(product.price)}</p>
 
         {maxItems > 0 ? (
           isAddedToCart ? (

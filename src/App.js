@@ -4,6 +4,8 @@ import NavBar from "./components/NavBar/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "./context/cartContext";
 import CartContainer from "./components/CartContainer/CartContainer";
+import OrderConfirm from "./components/OrderConfirm/OrderConfirm";
+import Checkout from "./components/Checkout/Checkout";
 
 function App() {
   return (
@@ -20,10 +22,11 @@ function App() {
                 element={<ItemListContainer />}
               />
               <Route path="/cart" element={<CartContainer />} />
+              <Route path="/checkout" element={<Checkout />} />
               <Route
-                path="/contacto"
-                element={<h1>Seccion en mantenimiento</h1>}
-              />
+                path="/order-confirmation/:id"
+                element={<OrderConfirm />}
+              ></Route>
               <Route path="*" element={<h1>Page not found: 404</h1>} />
             </Routes>
           </div>

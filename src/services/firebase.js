@@ -8,6 +8,7 @@ import {
   getDoc,
   where,
   query,
+  addDoc,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -50,4 +51,21 @@ async function getCategoryId(categoryId) {
   return documents.map((item) => ({ ...item.data(), id: item.id }));
 }
 
-export { getData, getDataByID, getCategoryId };
+async function createOrder(orderData) {
+  const collectionRef = collection(db, "orders");
+  const docCreated = await addDoc(collectionRef, orderData);
+  return docCreated.id;
+}
+
+async function getOrder(id) {
+  const docRef = doc(db, "orders", id);
+  const docSnapshot = await getDoc(docRef);
+
+  if (docSnapshot.exists()) {
+    return { ...docSnapshot.data(), id: docSnapshot.id };
+  } else {
+    throw new Error("No encontramos ese producto.");
+  }
+}
+
+export { getData, getDataByID, getCategoryId, createOrder, getOrder };
