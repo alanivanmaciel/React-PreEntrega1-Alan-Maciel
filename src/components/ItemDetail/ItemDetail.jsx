@@ -26,17 +26,23 @@ const ItemDetail = ({ product }) => {
   return (
     <article className="DetailContainer">
       <header>
-        <h1>{product.title}</h1>
+        <h1>{product.category.toUpperCase()}</h1>
       </header>
       <picture>
         <img width={400} src={product.img} alt={product.title} />
       </picture>
       <section>
-        <h3>Descripcion: {product.color}</h3>
-        <p>ID de Producto: {product.id}</p>
-        <p>Stock: {maxItems} </p>
-        <p>Precio: ${formatPrice(product.price)}</p>
-
+        <div>
+          <h2>{product.title}</h2>
+          <p>{product.detalle}</p>
+        </div>
+        <p>Color: {product.color}</p>
+        <h2>${formatPrice(product.price)}</h2>
+        {maxItems === 1 ? (
+          <p>Stock: {maxItems} unidad.</p>
+        ) : (
+          <p>Stock: {maxItems} unidades.</p>
+        )}
         {maxItems > 0 ? (
           isAddedToCart ? (
             <Link to={`/cart`}>

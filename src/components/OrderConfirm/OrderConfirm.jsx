@@ -17,12 +17,15 @@ function OrderConfirm() {
       <h1>Gracias por tu compra!</h1>
       {orderData ? (
         <div>
-          Productos:{" "}
+          <h3>ID de orden de compra: {id}</h3>
           {orderData.items.map((item) => {
             return (
-              <small>
-                {item.title} - {item.count} unidades.
-              </small>
+              <div key={item.id}>
+                <p>
+                  Productos: {item.title} {item.color} - ({item.count})
+                  unidades.
+                </p>
+              </div>
             );
           })}
         </div>

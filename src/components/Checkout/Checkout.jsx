@@ -3,6 +3,8 @@ import { createOrder } from "../../services/firebase";
 import { cartContext } from "../../context/cartContext";
 import ButtonComponent from "../ButtonComponent/ButtonComponent";
 import { useState, useContext } from "react";
+import "./Checkout.css";
+import { TextField } from "@mui/material";
 
 function Checkout() {
   const [buyer, setBuyer] = useState({
@@ -25,7 +27,6 @@ function Checkout() {
 
     try {
       const idOrderBuy = await createOrder(orderData);
-      console.log(`Gracias por tu compra, tu numero de orden es ${idOrderBuy}`);
       navigate(`/order-confirmation/${idOrderBuy}`);
       clearCart();
     } catch (error) {
@@ -41,61 +42,59 @@ function Checkout() {
     setBuyer(newState);
   }
 
-  function resetForm(e) {
-    e.preventDefault();
-    setBuyer({
-      firstname: "",
-      lastname: "",
-      age: "",
-    });
-  }
   return (
-    <form>
-      <h2>Completa tus datos para completar la compra🛍</h2>
-      <div style={{ display: "flex", marginBottom: 8 }}>
-        <label htmlFor="lastname" style={{ width: "100px", marginRight: 4 }}>
-          Nombre
-        </label>
-        <input
-          value={buyer.firstname}
-          name="firstname"
-          type="text"
-          onChange={onInputChange}
-        />
-      </div>
+    <div className="ContainerForm">
+      <form>
+        <h2>Completa los datos para finalizar la compra</h2>
 
-      <div style={{ display: "flex", marginBottom: 8 }}>
-        <label htmlFor="lastname" style={{ width: "100px", marginRight: 4 }}>
-          Apellido
-        </label>
-        <input
-          value={buyer.lastname}
-          name="lastname"
-          type="text"
-          onChange={onInputChange}
-        />
-      </div>
+        <div className="Inputs">
+          <TextField
+            required
+            size="small"
+            label="Nombre"
+            value={buyer.firstname}
+            name="firstname"
+            type="text"
+            onChange={onInputChange}
+          />
 
-      <div style={{ display: "flex", marginBottom: 8 }}>
-        <label style={{ width: "100px", marginRight: 4 }}>Edad</label>
-        <input
-          value={buyer.age}
-          name="age"
-          type="number"
-          onChange={onInputChange}
-        />
-      </div>
-
-      <ButtonComponent
-        disabled={
-          !(buyer.firstname !== "" && buyer.lastname !== "" && buyer.age !== "")
-        }
-        onClick={handleCheckout}
-      >
-        Finalizar Compra
-      </ButtonComponent>
-      <button onClick={resetForm}>Cancelar</button>
-    </form>
+          <TextField
+            required
+            size="small"
+            label="Apellido"
+            value={buyer.lastname}
+            name="lastname"
+            type="text"
+            onChange={onInputChange}
+          />
+          <TextField
+            required
+            size="small"
+            label="Edad"
+            value={buyer.age}
+            name="age"
+            type="number"
+            onChange={onInputChange}
+          />
+        </div>
+        <div>
+          <ButtonComponent
+            disabled={
+              !(
+                buyer.firstname !== "" &&
+                buyer.lastname !== "" &&
+                buyer.age !== ""
+              )
+            }
+            onClick={handleCheckout}
+            width="200px"
+            height="40px"
+          >
+            Finalizar Compra
+          </ButtonComponent>
+        </div>
+      </form>
+    </div>
   );
 }
 
