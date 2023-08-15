@@ -15,7 +15,7 @@ Contiene un NavBar, un menu con categorias de indumentaria y un carrito de compr
 - ItemDetail
 - ButtonComponent
 
-## Librerias y servicios
+## Librerias y servicios utilizados
 - Firebase - Alojar productos y ordenes de compra
 - Material UI
 - React-router-dom
