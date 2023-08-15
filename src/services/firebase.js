@@ -12,9 +12,9 @@ import {
 } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDfbLwqZwj7HKJNGM2dZGZbuRiEFbCiJtg",
+  apiKey: process.env.REACT_APP_API_KEY,
   authDomain: "ecommerce-coder-ruda.firebaseapp.com",
-  projectId: "ecommerce-coder-ruda",
+  projectId: process.env.REACT_APP_PROJECT_ID,
   storageBucket: "ecommerce-coder-ruda.appspot.com",
   messagingSenderId: "1097654468186",
   appId: "1:1097654468186:web:118df3fd321076ef21e263",

@@ -92,7 +92,7 @@ function Checkout() {
         }
         onClick={handleCheckout}
       >
-        Confirmar Compra
+        Finalizar Compra
       </ButtonComponent>
       <button onClick={resetForm}>Cancelar</button>
     </form>

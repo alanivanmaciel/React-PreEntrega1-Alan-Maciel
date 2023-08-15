@@ -34,7 +34,7 @@ function CartContainer() {
         <div>Total de la compra: $ {formatPrice(getTotalPriceInCart())}</div>
         <Link to="/checkout">
           <ButtonComponent width="200px" height="40px">
-            Finalizar compra
+            Continuar compra
           </ButtonComponent>
         </Link>
       </div>
