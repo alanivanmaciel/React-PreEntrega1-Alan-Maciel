@@ -8,7 +8,16 @@ import { Link } from "react-router-dom";
 function CartContainer() {
   const { cart, removeItem, getTotalPriceInCart } = useContext(cartContext);
   if (cart.length === 0) {
-    return <h1>Carrito vacio...</h1>;
+    return (
+      <div>
+        <h1>El carrito se encuentra vacio!</h1>
+        <Link to="/">
+          <ButtonComponent width="250px" height="40px">
+            Volver a los productos
+          </ButtonComponent>
+        </Link>
+      </div>
+    );
   }
   return (
     <div className="CartContainer">
